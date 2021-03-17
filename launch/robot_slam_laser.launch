@@ -9,7 +9,7 @@
 
   <!-- simulation robot with lidar and map-->
   <group if="$(arg simulation)">
-    <include file="$(find robot_navigation)/simulation/simulation_robot.launch"/>
+    <include file="$(find robot_simulation)/launch/simulation_one_robot.launch"/>
   </group>
 
   <!-- robot with lidar -->

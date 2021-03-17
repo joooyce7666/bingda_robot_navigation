@@ -1,5 +1,20 @@
-#!/usr/bin/env python
-#coding=utf-8
+#!/usr/bin/python
+# coding=gbk
+
+# Copyright 2020 Wechange Tech.
+# Developer: FuZhi, Liu (liu.fuzhi@wechangetech.com)
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 from visualization_msgs.msg import Marker
 from visualization_msgs.msg import MarkerArray
@@ -9,6 +24,7 @@ from geometry_msgs.msg import PointStamped,PoseStamped
 import actionlib
 from move_base_msgs.msg import *
 import tf
+
 def status_callback(msg):
 
     global goal_pub, index,markerArray
@@ -97,13 +113,6 @@ def click_callback(msg):
     marker.pose.position.x = msg.pose.position.x
     marker.pose.position.y = msg.pose.position.y
     marker.pose.position.z = msg.pose.position.z
-
-    # marker.text = str(count)
-
-    # We add the new marker to the MarkerArray, removing the oldest
-    # marker from it when necessary
-    # if(count > MARKERS_MAX):
-    #    markerArray.markers.pop(0)
 
     markerArray.markers.append(marker)
 

@@ -1,6 +1,8 @@
-#!/usr/bin/env python
-# Copyright 2017 HyphaROS Workshop.
-# Developer: HaoChih, LIN (hypha.ros@gmail.com)
+#!/usr/bin/python
+# coding=gbk
+
+# Copyright 2020 Wechange Tech.
+# Developer: FuZhi, Liu (liu.fuzhi@wechangetech.com)
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
