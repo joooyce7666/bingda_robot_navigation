@@ -1,8 +1,8 @@
 DWAPlannerROS:
 
 # Robot Configuration Parameters
-  max_vel_x: 0.26
-  min_vel_x: -0.26
+  max_vel_x: 0.25
+  min_vel_x: -0.25
 
   max_vel_y: 0.0
   min_vel_y: 0.0
@@ -45,3 +45,7 @@ DWAPlannerROS:
 # Debugging
   publish_traj_pc : true
   publish_cost_grid_pc: true
+
+  prune_plan: false
+  use_dwa: true
+  restore_defaults: false

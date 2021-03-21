@@ -32,17 +32,17 @@
     </group>
     <group if="$(eval base_type == 'NanoCar')">
         <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_laser"
-            args="0.0624 0.0 0.115 3.14159265 0.0 0.0 $(arg base_frame) $(arg lidar_frame) 20">
+            args="0.1037 0.0 0.115 3.14159265 0.0 0.0 $(arg base_frame) $(arg lidar_frame) 20">
         </node>
     </group>
     <group if="$(eval base_type == 'NanoCar_Pro')">
         <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_laser"
-            args="0.115 0.0 0.165 3.14159265 0.0 0.0 $(arg base_frame) $(arg lidar_frame) 20">
+            args="0.1037 0.0 0.165 3.14159265 0.0 0.0 $(arg base_frame) $(arg lidar_frame) 20">
         </node>
     </group>
     <group if="$(eval base_type == 'NanoCar_SE')">
         <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_laser"
-            args="0.095 0.0 0.115 1.5708 0.0 0.0 $(arg base_frame) $(arg lidar_frame) 20">
+            args="0.0955 0.0 0.115 1.5708 0.0 0.0 $(arg base_frame) $(arg lidar_frame) 20">
         </node>
     </group>
 

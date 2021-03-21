@@ -4,6 +4,7 @@
   <arg name="simulation" default= "false"/> 
   <arg name="planner"  default="teb" doc="opt: dwa, teb"/> 
   <arg name="open_rviz" default="false"/>
+  <arg name="use_dijkstra" default= "true"/> 
 
   <group if="$(arg simulation)">
     <!-- simulation robot with lidar and map-->
@@ -32,6 +33,8 @@
   <include file="$(find robot_navigation)/launch/move_base.launch" >
     <arg name="planner"            value="$(arg planner)"/>
     <arg name="simulation"            value="$(arg simulation)"/>
+    <arg name="use_dijkstra"     value="$(arg use_dijkstra)"/>
+
   </include>
 
   <!-- rviz -->

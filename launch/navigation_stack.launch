@@ -4,6 +4,7 @@
   <arg name="simulation" default= "false"/> 
   <arg name="planner"  default="dwa" doc="opt: dwa, teb"/> 
   <arg name="move_forward_only" default="false"/>
+  <arg name="use_dijkstra" default= "true"/>  
   <!-- Map server -->
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)">
     <param name="frame_id" value="map"/>
@@ -20,5 +21,6 @@
     <arg name="planner"               value="$(arg planner)"/>
     <arg name="simulation"            value="$(arg simulation)"/>
     <arg name="move_forward_only"     value="$(arg move_forward_only)"/>
+    <arg name="use_dijkstra"     value="$(arg use_dijkstra)"/>
   </include>
 </launch>
