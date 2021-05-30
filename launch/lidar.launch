@@ -45,7 +45,11 @@
             args="0.0955 0.0 0.115 1.5708 0.0 0.0 $(arg base_frame) $(arg lidar_frame) 20">
         </node>
     </group>
-
+    <group if="$(eval base_type == 'Race182')">
+        <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_laser"
+            args="0.1 0.0 0.192 3.14159265 0.0 0.0 $(arg base_frame) $(arg lidar_frame) 20">
+        </node>
+    </group>
 
 
 
