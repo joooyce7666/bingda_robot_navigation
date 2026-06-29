@@ -11,23 +11,31 @@ TebLocalPlannerROS:
  global_plan_overwrite_orientation: True
  allow_init_with_backwards_motion: True
  max_global_plan_lookahead_dist: 3.0
- global_plan_viapoint_sep: -1
+#  global_plan_viapoint_sep: -1
+ global_plan_viapoint_sep: 3.0
  global_plan_prune_distance: 1
  exact_arc_length: False
- feasibility_check_no_poses: 2
+#  feasibility_check_no_poses: 2
+ feasibility_check_no_poses: 3
  publish_feedback: False
     
  # Robot
          
  max_vel_x: 0.2
+#  max_vel_x: 0.3
  max_vel_x_backwards: 0.2
+#  max_vel_x_backwards: 0.3
  max_vel_y: 0.0
  max_vel_theta: 0.53 # the angular velocity is also bounded by min_turning_radius in case of a carlike robot (r = v / omega)
+#  max_vel_theta: 0.7
  acc_lim_x: 0.5
+#  acc_lim_x: 0.65
  acc_lim_theta: 0.5
+#  acc_lim_theta: 0.65
 
  # ********************** Carlike robot parameters ********************
  min_turning_radius: 0.375        # Min turning radius of the carlike robot (compute value using a model or adjust with rqt_reconfigure manually)
+#  min_turning_radius: 0.1
  wheelbase: 0.145                 # Wheelbase of our robot
  cmd_angle_instead_rotvel: False  # stage simulator takes the angle instead of the rotvel as input (twist message)
  # ********************************************************************
@@ -40,21 +48,26 @@ TebLocalPlannerROS:
 
  # GoalTolerance
     
- xy_goal_tolerance: 0.1
- yaw_goal_tolerance: 0.2
- free_goal_vel: False
- complete_global_plan: True
+ xy_goal_tolerance: 0.3
+ yaw_goal_tolerance: 2.0
+#  free_goal_vel: False
+ free_goal_vel: True
+#  complete_global_plan: True
+ complete_global_plan: False
     
  # Obstacles
     
  min_obstacle_dist: 0.12 # This value must also include our robot's expansion, since footprint_model is set to "line".
- inflation_dist: 0.6
+#  min_obstacle_dist: 0.18
+#  inflation_dist: 0.6
+ inflation_dist: 0.3
  include_costmap_obstacles: True
- costmap_obstacles_behind_robot_dist: 1.5
+ costmap_obstacles_behind_robot_dist: 2
  obstacle_poses_affected: 15
 
  dynamic_obstacle_inflation_dist: 0.6
- include_dynamic_obstacles: True 
+#  include_dynamic_obstacles: True 
+ include_dynamic_obstacles: False
 
  costmap_converter_plugin: ""
  costmap_converter_spin_thread: True
@@ -111,8 +124,11 @@ TebLocalPlannerROS:
  
  shrink_horizon_backup: True
  shrink_horizon_min_duration: 10
- oscillation_recovery: False
+#  oscillation_recovery: False
+ oscillation_recovery: True
  oscillation_v_eps: 0.1
  oscillation_omega_eps: 0.1
- oscillation_recovery_min_duration: 10
- oscillation_filter_duration: 10
+#  oscillation_recovery_min_duration: 10
+ oscillation_recovery_min_duration: 3
+#  oscillation_filter_duration: 10
+ oscillation_filter_duration: 4
