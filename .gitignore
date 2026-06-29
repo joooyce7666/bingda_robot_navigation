@@ -1,0 +1,9 @@
+build/
+devel/
+install/
+logs/
+*.bag
+*.pyc
+.vscode/
+.idea/
+.DS_Store
